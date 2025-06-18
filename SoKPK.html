@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Soal KPK</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 700px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #f1c40f;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #ecf0f1;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: #f1c40f;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 15;
+      transition: color 0.3s ease;
+    }
+
+    .back-button:hover {
+      color: #f1c40f;
+    }
+
+    .input-section {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .question {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+
+    .question label {
+      margin-right: 10px;
+      flex: 1;
+      text-align: left;
+    }
+
+    .question input {
+      width: 30%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #f1c40f;
+      color: #2c3e50;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .result span {
+      font-weight: bold;
+    }
+
+    .correct {
+      color: #2ecc71;
+    }
+
+    .incorrect {
+      color: #e74c3c;
+    }
+
+    .background-math {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .background-math span {
+      position: absolute;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.2);
+      animation: float 15s infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    .submit-button, .clear-button {
+      background-color: #f1c40f;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .submit-button:hover, .clear-button:hover {
+      background-color: #e67e22;
+      transform: scale(1.1);
+    }
+
+    .submit-button:focus, .clear-button:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(241, 196, 15, 0.7);
+    }
+
+  </style>
+  <script>
+    function checkAnswers() {
+      const answers = [
+        { id: "answer1", correct: "12" },
+        { id: "answer2", correct: "24" },
+        { id: "answer3", correct: "30" },
+        { id: "answer4", correct: "30" },
+        { id: "answer5", correct: "20" }
+      ];
+
+      answers.forEach((answer, index) => {
+        const userAnswer = document.getElementById(answer.id).value.trim();
+        const resultLabel = document.getElementById('result' + (index + 1));
+
+        if (userAnswer === answer.correct) {
+          resultLabel.innerHTML = "✔️ Jawaban Benar!";
+          resultLabel.className = "correct";
+        } else {
+          resultLabel.innerHTML = "❌ Jawaban Salah!";
+          resultLabel.className = "incorrect";
+        }
+      });
+    }
+
+    function clearAnswers() {
+      const answers = ["answer1", "answer2", "answer3", "answer4", "answer5"];
+      answers.forEach(id => document.getElementById(id).value = "");
+
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById('result' + i).innerHTML = '';
+        document.getElementById('result' + i).className = '';
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Back button -->
+  <button class="back-button" onclick="window.location.href='cekKPK.html'">&#8592; back</button>
+
+  <div class="container">
+    <h1>Soal KPK</h1>
+    <p>Hitunglah Kelipatan Persekutuan Terkecil (KPK) dari bilangan berikut:</p>
+    <form>
+      <div class="question">
+        <label for="answer1">KPK dari 4 dan 6:</label>
+        <input type="text" id="answer1" required>
+        <span id="result1"></span>
+      </div>
+      <div class="question">
+        <label for="answer2">KPK dari 8 dan 12:</label>
+        <input type="text" id="answer2" required>
+        <span id="result2"></span>
+      </div>
+      <div class="question">
+        <label for="answer3">KPK dari 10 dan 15:</label>
+        <input type="text" id="answer3" required>
+        <span id="result3"></span>
+      </div>
+      <div class="question">
+        <label for="answer4">KPK dari 5 dan 6:</label>
+        <input type="text" id="answer4" required>
+        <span id="result4"></span>
+      </div>
+      <div class="question">
+        <label for="answer5">KPK dari 4 dan 10:</label>
+        <input type="text" id="answer5" required>
+        <span id="result5"></span>
+      </div>
+      <div>
+        <button type="button" class="submit-button" onclick="checkAnswers()">Periksa Jawaban</button>
+        <button type="button" class="clear-button" onclick="clearAnswers()">Clear</button>
+      </div>
+    </form>
+  </div>
+  <div class="background-math">
+    <span style="top: 10%; left: 10%;">12</span>
+    <span style="top: 30%; left: 50%;">KPK</span>
+  </div>
+</body>
+</html>

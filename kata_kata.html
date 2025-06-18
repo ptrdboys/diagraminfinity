@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kata-Kata Motivasi - Theo Math</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ee0979, #ff6a00);
+      color: #fff;
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 2rem;
+      color: #fff;
+      animation: float 6s infinite linear;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(-50%);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffc0cb;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px rgba(255, 192, 203, 0.8);
+    }
+
+    .input-box {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      width: 70%;
+      max-width: 400px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: #ff6b81;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4757;
+    }
+
+    #output {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      line-height: 1.6;
+    }
+
+    .kembali {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .kembali a button {
+      background: #ffa502;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 50px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      input[type="text"] {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kata-Kata Motivasi</h1>
+    <div class="input-box">
+      <input type="text" id="nama" placeholder="Masukkan namamu...">
+      <br>
+      <button onclick="tampilkanMotivasi()">🎲</button>
+    </div>
+    <div id="output"></div>
+
+    <div class="kembali">
+      <a href="index.html">
+        <button>💫 kembali 💫</button>
+      </a>
+    </div>
+
+    <footer>
+      &copy; 2025 Theo Math | Putri Rahma Dini
+    </footer>
+  </div>
+
+  <script>
+    const motivasiList = [
+      "Jangan takut gagal, karena dari kegagalan kita belajar. - Albert Einstein",
+      "Kesuksesan adalah hasil dari persiapan, kerja keras, dan belajar dari kegagalan. - Colin Powell",
+      "Percaya pada dirimu sendiri dan segala sesuatu mungkin terjadi. - Anonymous",
+      "Mimpi tidak akan menjadi kenyataan tanpa aksi nyata. - Walt Disney",
+      "Kerjakan yang terbaik hari ini agar tidak menyesal esok hari. - Haruki Murakami",
+      "Setiap hari adalah kesempatan baru untuk menjadi lebih baik. - Dalai Lama",
+      "Keberhasilan bukan milik orang pintar, tapi milik mereka yang mau berusaha. - B.J. Habibie",
+      "Ketika kamu berhenti belajar, saat itu juga kamu mulai mundur. - Steve Jobs",
+      "Orang yang sabar lebih kuat dari seorang prajurit. - Confucius",
+      "Kunci sukses adalah fokus pada tujuan, bukan hambatan. - Tony Robbins",
+      "Lakukan apa yang kamu bisa, dengan apa yang kamu punya, di mana kamu berada. - Theodore Roosevelt",
+      "Hidup itu 10% apa yang terjadi padamu dan 90% bagaimana kamu meresponnya. - Charles Swindoll",
+      "Jadilah perubahan yang ingin kamu lihat di dunia. - Mahatma Gandhi",
+      "Berani adalah awal dari segala pencapaian. - Amelia Earhart",
+      "Semangat yang besar mampu mengalahkan rintangan yang besar. - Napoleon Hill",
+      "Langkah kecil hari ini bisa membawa perubahan besar esok hari. - Anonymous",
+      "Lebih baik gagal dalam mencoba daripada tidak pernah mencoba. - Jack Ma",
+      "Impianmu tidak akan bekerja kecuali kamu melakukannya. - John C. Maxwell",
+      "Setiap kesulitan adalah kesempatan untuk berkembang. - Winston Churchill",
+      "Belajar dari hari kemarin, hidup untuk hari ini, harapkan hari esok. - Albert Einstein",
+      "Sukses itu perjalanan, bukan tujuan akhir. - Zig Ziglar",
+      "Yakin itu setengah dari kemenangan. - Theodore Roosevelt",
+      "Kamu lebih kuat dari yang kamu pikirkan. - Anonymous",
+      "Terus bergerak, walau perlahan. - Confucius",
+      "Keajaiban terjadi ketika kamu percaya. - Anonymous",
+      "Tak ada jalan pintas menuju tempat yang berharga. - Beverly Sills",
+      "Jangan menyerah karena semua hal besar butuh waktu. - Anonymous",
+      "Jika kamu bisa memimpikannya, kamu bisa mewujudkannya. - Walt Disney",
+      "Percayalah, kamu sedang tumbuh. - Anonymous",
+      "Ubah kelemahan jadi kekuatan. - Nick Vujicic",
+      "Setiap mimpi layak untuk dikejar. - Anonymous",
+      "Pendidikan adalah senjata paling ampuh untuk mengubah dunia. - Nelson Mandela",
+      "Ketekunan adalah ibu dari keberhasilan. - Benjamin Disraeli",
+      "Sukses bukan akhir, kegagalan bukan kehancuran. - Winston Churchill",
+      "Berpikirlah positif, hasilmu akan positif. - Anonymous",
+      "Hanya mereka yang berani gagal bisa meraih sukses besar. - Robert Kennedy",
+      "Lihat ke atas untuk harapan, lihat ke depan untuk masa depan. - Anonymous",
+      "Hidup adalah tentang menciptakan diri yang kamu inginkan. - George Bernard Shaw",
+      "Disiplin adalah jembatan antara tujuan dan pencapaian. - Jim Rohn",
+      "Kamu tidak perlu hebat untuk memulai, tapi kamu harus mulai untuk menjadi hebat. - Zig Ziglar",
+      "Satu-satunya cara untuk melakukan pekerjaan hebat adalah mencintai apa yang kamu lakukan. - Steve Jobs",
+      "Kebahagiaan tidak bergantung pada apa yang kamu miliki, tapi pada apa yang kamu pikirkan. - Buddha",
+      "Keraguan membunuh lebih banyak mimpi daripada kegagalan. - Suzy Kassem",
+      "Waktu terbaik menanam pohon adalah 20 tahun lalu. Waktu terbaik berikutnya adalah sekarang. - Pepatah Tiongkok",
+      "Jangan takut bermimpi besar. Tak ada batas kecuali yang kamu buat sendiri. - Anonymous",
+      "Tujuan tanpa rencana hanya harapan. - Antoine de Saint-Exupéry",
+      "Setiap usaha pasti membuahkan hasil. - Anonymous",
+      "Bangun lebih awal, belajar lebih keras, sukses lebih cepat. - Anonymous",
+      "Kegigihan hari ini menentukan keberhasilan masa depan. - Anonymous",
+      "Bekerja keraslah dalam diam, biarkan kesuksesanmu membuat kebisingan. - Frank Ocean"
+    ];
+
+    function tampilkanMotivasi() {
+      const nama = document.getElementById('nama').value.trim();
+      const output = document.getElementById('output');
+      if (!nama) {
+        output.innerHTML = "Silakan masukkan nama terlebih dahulu.";
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * motivasiList.length);
+      const motivasi = motivasiList[randomIndex];
+      output.innerHTML = `Halo, <strong>${nama}</strong>!<br><br>✨ "${motivasi}" ✨ <br><br>❤️❤️❤️`;
+    }
+
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.innerText = '❤️';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 500);
+  </script>
+</body>
+</html>

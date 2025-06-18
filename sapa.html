@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Datang!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ffeb3b, #ffc107);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #e0e0e0;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    a button {
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #ffeb3b, #ffc107);
+      color: #1a237e;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(255, 235, 59, 0.4);
+    }
+
+    a button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(255, 235, 59, 0.8);
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      a button {
+        font-size: 0.9rem;
+        padding: 0.8rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="sapaan" aria-label="Sapaan untuk siswa">Hai!</h1>
+  <p>wii senang kamu siap menjelajahi dunia matematika bareng putriiee! 😊</p>
+  <a href="index.html">
+    <button aria-label="Tombol masuk ke halaman utama TheoMath">Masuk ke TheoMath 🚀</button>
+  </a>
+ 
+  <script>
+    const nama = sessionStorage.getItem('namaSiswa');
+    if (nama) {
+      document.getElementById("sapaan").textContent = `Halo, ${nama}! `;
+    }
+    
+  </script>
+</body>
+</html>

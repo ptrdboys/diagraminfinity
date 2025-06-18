@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tujuan Diagram - Theo Math</title>
+  <link rel="icon" href="image/logo.jpeg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0a2540, #154c79);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 100px;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 50px 20px 20px;
+      font-size: 2.5rem;
+      color: #ffeb3b;
+      text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    }
+
+    .sub-heading {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #cfd8dc;
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+
+    .bubble-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 30px 20px;
+    }
+
+    .bubble {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+      padding: 20px;
+      width: 240px;
+      min-height: 80px;
+      text-align: center;
+      font-size: 1rem;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      transition: transform 0.3s ease, background 0.4s;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .bubble:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.8rem;
+      background: none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      padding: 20px 10px;
+      font-size: 0.95rem;
+      margin-top: 40px;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 10px;
+      color: #b2ebf2;
+    }
+
+    .ocean-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -2;
+      background: url('https://i.ibb.co/YXJd4LJ/bubble-bg.png') repeat;
+      opacity: 0.1;
+      animation: scrollBubbles 10s linear infinite;
+    }
+
+    @keyframes scrollBubbles {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 -2000px; }
+    }
+
+    .math-symbols {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -3;
+    }
+
+    .symbol {
+      position: absolute;
+      font-size: 2.5rem;
+      color: rgba(255,255,255,0.08);
+      animation: drift 25s linear infinite;
+    }
+
+    .symbol:nth-child(1) { top: 90%; left: 10%; animation-delay: 0s; }
+    .symbol:nth-child(2) { top: 95%; left: 40%; animation-delay: 2s; }
+    .symbol:nth-child(3) { top: 92%; left: 70%; animation-delay: 4s; }
+    .symbol:nth-child(4) { top: 97%; left: 50%; animation-delay: 1s; }
+    .symbol:nth-child(5) { top: 93%; left: 80%; animation-delay: 3s; }
+    .symbol:nth-child(6) { top: 98%; left: 25%; animation-delay: 5s; }
+    .symbol:nth-child(7) { top: 94%; left: 60%; animation-delay: 6s; }
+
+    @keyframes drift {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+        padding-top: 30px;
+      }
+      .bubble {
+        width: 90%;
+        font-size: 0.95rem;
+      }
+      .back-btn {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ocean-bg"></div>
+
+  <div class="math-symbols">
+    <div class="symbol">∑</div>
+    <div class="symbol">π</div>
+    <div class="symbol">√</div>
+    <div class="symbol">∞</div>
+    <div class="symbol">∆</div>
+    <div class="symbol">α</div>
+    <div class="symbol">β</div>
+    <div class="symbol">θ</div>
+  </div>
+
+  <button class="back-btn" onclick="window.location.href='buka.html'">🔙</button>
+
+  <h1>📊 Tujuan Penggunaan Diagram</h1>
+  <div class="sub-heading">Belajar Matematika Jadi Lebih Visual & Seru! 💡</div>
+
+  <div class="bubble-container">
+    <div class="bubble">Membuat data lebih mudah dipahami</div>
+    <div class="bubble">Membandingkan data secara visual</div>
+    <div class="bubble">Menyajikan informasi dengan menarik</div>
+    <div class="bubble">Mempermudah pengambilan keputusan</div>
+    <div class="bubble">Mengidentifikasi pola atau tren</div>
+    <div class="bubble">Menyampaikan pesan secara cepat dan jelas</div>
+  </div>
+
+  <footer>
+    &copy; Theo Math | 23510027 - Putri Rahma Dini
+    <div class="quote">"Matematika adalah bahasa untuk memahami dunia." ✨</div>
+  </footer>
+
+</body>
+</html>

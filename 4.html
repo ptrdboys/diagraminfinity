@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pilih Pembelajaran - Theo Math</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: auto;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px 70px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 950px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #f1c40f;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .option {
+      background: #006d77;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .option h2 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .option p {
+      font-size: 1.1rem;
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 150%;
+      height: 150%;
+      background: rgba(255, 255, 255, 0.1);
+      background-image: url('https://www.transparenttextures.com/patterns/geometry.png');
+      background-size: cover;
+      transform: translateX(-50%) rotate(45deg);
+      z-index: 0;
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
+
+    .option:hover::before {
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      .options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      color: #fff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 20;
+      transition: transform 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.2);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="window.location.href='buka.html'">
+    &#8592; Kembali
+  </button>
+
+  <div class="container">
+    <h1>Pilih Pembelajaran Matematika</h1>
+    <p>Pilih topik yang ingin kamu pelajari dan mulai perjalanan belajarmu!</p>
+    <div class="options">
+      <div class="option" onclick="window.location.href='teorema_dasar_kongruensi.html'">
+        <h2>Teorema Dasar Kongruensi</h2>
+        <p>Dasar pemahaman keterkaitan antar bilangan.</p>
+      </div>
+      <div class="option" onclick="window.location.href='sistem_kongruensi_linear.html'">
+        <h2>Sistem Kongruensi Linear</h2>
+        <p>Menyusun hubungan antar bilangan dengan ketepatan.</p>
+      </div>
+      <div class="option" onclick="window.location.href='teorema_sisa_cina.html'">
+        <h2>Teorema Sisa Cina</h2>
+        <p>Jalan pintas menuju penyelesaian sistem bilangan.</p>
+      </div>
+    </div>
+    <footer>
+        &copy; Kongruensi | 23510027 - Putri Rahma Dini
+      </footer>
+  </div>
+
+</body>
+</html>

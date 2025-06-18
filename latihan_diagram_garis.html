@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Latihan Diagram Garis</title>
+  <link rel="icon" href="image/logo.jpeg" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .orb {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #3498db, #2c3e50);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+      animation: orb-move 25s infinite;
+    }
+
+    .orb:nth-child(1) {
+      top: 10%;
+      left: 10%;
+    }
+
+    .orb:nth-child(2) {
+      top: 60%;
+      left: 70%;
+    }
+
+    @keyframes orb-move {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -30px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .background-math span {
+      position: absolute;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.2);
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 850px;
+      margin: 60px auto;
+      background-color: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(241,196,15,0.7);
+    }
+
+    .quiz-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .quiz-btn {
+      background-color: #8e44ad;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .quiz-btn:hover {
+      background-color: #9b59b6;
+    }
+
+    .question-box {
+      display: none;
+      margin-top: 20px;
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .question-box img {
+      width: 100%;
+      max-width: 450px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      border: 3px solid #2ecc71;
+    }
+
+    .question {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .submit-btn {
+      background-color: #2980b9;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #3498db;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 25px;
+      background-color: #f1c40f;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+      width: fit-content;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Orb Animation -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <!-- Symbol Background -->
+  <div class="background-math">
+    <span style="top: 10%; left: 20%;">3.14</span>
+    <span style="top: 30%; left: 40%;">∞</span>
+    <span style="top: 50%; left: 10%;">x + y = z</span>
+    <span style="top: 70%; left: 50%;">√25</span>
+    <span style="top: 20%; left: 70%;">eiπ + 1 = 0</span>
+    <span style="top: 60%; left: 80%;">∑</span>
+    <span style="top: 15%; left: 35%;">y = mx + b</span>
+    <span style="top: 45%; left: 65%;">a² + b² = c²</span>
+    <span style="top: 75%; left: 25%;">log₁₀100</span>
+    <span style="top: 85%; left: 55%;">f(x) = x²</span>
+  </div>
+
+  <!-- Konten Interaktif -->
+  <div class="container">
+    <h1>Latihan Interaktif Diagram Garis</h1>
+
+    <div class="quiz-nav">
+      <button class="quiz-btn" onclick="showQuestion(1)">1</button>
+      <button class="quiz-btn" onclick="showQuestion(2)">2</button>
+      <button class="quiz-btn" onclick="showQuestion(3)">3</button>
+      <button class="quiz-btn" onclick="showQuestion(4)">4</button>
+      <button class="quiz-btn" onclick="showQuestion(5)">5</button>
+    </div>
+
+    <!-- Soal 1 -->
+    <div id="question1" class="question-box">
+      <img src="https://i.ibb.co/6rNzxry/garis1.png" alt="Diagram Garis 1">
+      <div class="question">Pada bulan apa terjadi peningkatan terbesar?</div>
+      <input type="text" id="answer1">
+      <button class="submit-btn" onclick="checkAnswer(1, 'April')">Cek Jawaban</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <!-- Soal 2 -->
+    <div id="question2" class="question-box">
+      <img src="https://i.ibb.co/sPy1ZkB/garis2.png" alt="Diagram Garis 2">
+      <div class="question">Berapa nilai data pada bulan Juni?</div>
+      <input type="text" id="answer2">
+      <button class="submit-btn" onclick="checkAnswer(2, '60')">Cek Jawaban</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <!-- Soal 3 -->
+    <div id="question3" class="question-box">
+      <img src="https://i.ibb.co/Yy7Hkck/garis3.png" alt="Diagram Garis 3">
+      <div class="question">Apakah tren data mengalami penurunan setelah bulan Mei?</div>
+      <input type="text" id="answer3">
+      <button class="submit-btn" onclick="checkAnswer(3, 'Ya')">Cek Jawaban</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <!-- Soal 4 -->
+    <div id="question4" class="question-box">
+      <img src="https://i.ibb.co/Nt2x9sx/garis4.png" alt="Diagram Garis 4">
+      <div class="question">Berapa selisih data antara bulan Januari dan Maret?</div>
+      <input type="text" id="answer4">
+      <button class="submit-btn" onclick="checkAnswer(4, '15')">Cek Jawaban</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <!-- Soal 5 -->
+    <div id="question5" class="question-box">
+      <img src="https://i.ibb.co/8ghs4XV/garis5.png" alt="Diagram Garis 5">
+      <div class="question">Bulan manakah yang memiliki nilai tertinggi?</div>
+      <input type="text" id="answer5">
+      <button class="submit-btn" onclick="checkAnswer(5, 'Desember')">Cek Jawaban</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+
+    <a href="diagram_garis.html" class="back-btn">⬅ Kembali ke Materi</a>
+  </div>
+
+  <script>
+    function showQuestion(num) {
+      const boxes = document.querySelectorAll('.question-box');
+      boxes.forEach(box => box.style.display = 'none');
+      document.getElementById(`question${num}`).style.display = 'block';
+    }
+
+    function checkAnswer(qNum, correct) {
+      const input = document.getElementById(`answer${qNum}`).value.trim();
+      const feedback = document.getElementById(`feedback${qNum}`);
+      if (input.toLowerCase() === correct.toLowerCase()) {
+        feedback.textContent = '✅ Jawaban benar!';
+        feedback.style.color = '#2ecc71';
+      } else {
+        feedback.textContent = '❌ Jawaban salah. Coba lagi ya!';
+        feedback.style.color = '#e74c3c';
+      }
+    }
+  </script>
+</body>
+</html>

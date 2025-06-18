@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Jenis Diagram - Theo Math</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background:
+        url('https://www.transparenttextures.com/patterns/squared-paper.png'),
+        linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      background-size: auto, cover;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #f1c40f;
+      text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+    }
+
+    p.subtext {
+      font-size: 1.25rem;
+      color: #ecf0f1;
+      margin-bottom: 50px;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .option {
+      background: rgba(255,255,255,0.07);
+      border: 2px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      width: 240px;
+      height: 280px;
+      border-radius: 25px;
+      padding: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(255,255,255,0.08);
+      transition: transform 0.4s, box-shadow 0.3s, background 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .option:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .option:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    .option:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    }
+
+    .option img {
+      width: auto;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin: 0 auto 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+    }
+
+    .option:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.35);
+    }
+
+    .option h2 {
+      font-size: 1.4rem;
+      margin: 15px 0 5px;
+      color: #f9e79f;
+    }
+
+    .option p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .math-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(255,255,255,0.15);
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #00e6e6;
+      font-weight: bold;
+      box-shadow: 0 0 5px rgba(0,255,255,0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+    }
+
+    footer .quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #a3e4d7;
+      margin-top: 10px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .options {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.location.href='buka.html'">⬅ Kembali</button>
+
+  <div class="container">
+    <h1>📊 Pilih Jenis Diagram</h1>
+    <p class="subtext">Yuk pilih diagram yang ingin kamu pelajari dan pahami data dengan cara seru!</p>
+
+    <div class="options">
+
+      <!-- Diagram Batang -->
+      <div class="option" onclick="window.location.href='diagram_batang.html'">
+        <img src="image/batang.jpg" alt="Diagram Batang" />
+        <h2>Diagram Batang</h2>
+        <p>Data dalam bentuk batang vertikal atau horizontal.</p>
+      </div>
+
+      <!-- Diagram Lingkaran -->
+      <div class="option" onclick="window.location.href='diagram_lingkaran.html'">
+        <img src="image/lingkaran.jpg" alt="Diagram Lingkaran" />
+        <h2>Diagram Lingkaran</h2>
+        <p>Menampilkan proporsi bagian dari keseluruhan.</p>
+      </div>
+
+      <!-- Diagram Garis -->
+      <div class="option" onclick="window.location.href='diagram_garis.html'">
+        <img src="image/garis.jpg" alt="Diagram Garis" />
+        <h2>Diagram Garis</h2>
+        <p>Menampilkan perubahan data seiring waktu.</p>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; Theo Math | 23510027 - Putri Rahma Dini
+      <div class="quote">"Visualisasi data adalah jembatan dari angka menuju pemahaman."</div>
+    </footer>
+  </div>
+
+</body>
+</html>

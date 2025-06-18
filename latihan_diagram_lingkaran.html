@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Latihan Diagram Lingkaran</title>
+  <link rel="icon" href="image/logo.jpeg" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .orb {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #3498db, #2c3e50);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+      animation: orb-move 25s infinite;
+    }
+    .orb:nth-child(1) {
+      top: 10%;
+      left: 10%;
+    }
+    .orb:nth-child(2) {
+      top: 60%;
+      left: 70%;
+    }
+    @keyframes orb-move {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -30px); }
+      100% { transform: translate(0, 0); }
+    }
+    .background-math span {
+      position: absolute;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.2);
+      animation: float 12s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 850px;
+      margin: 60px auto;
+      background-color: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(241,196,15,0.7);
+    }
+    .quiz-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .quiz-btn {
+      background-color: #8e44ad;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #9b59b6;
+    }
+    .question-box {
+      display: none;
+      margin-top: 20px;
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .question-box img {
+      width: 100%;
+      max-width: 450px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      border: 3px solid #2ecc71;
+    }
+    .question {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      background-color: #2980b9;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .submit-btn:hover {
+      background-color: #3498db;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 25px;
+      background-color: #f1c40f;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+      width: fit-content;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="background-math">
+    <span style="top: 10%; left: 20%;">π</span>
+    <span style="top: 30%; left: 40%;">360°</span>
+    <span style="top: 50%; left: 10%;">r²</span>
+    <span style="top: 70%; left: 50%;">1/4 lingkaran</span>
+    <span style="top: 20%; left: 70%;">φ</span>
+    <span style="top: 60%; left: 80%;">∠</span>
+    <span style="top: 15%; left: 35%;">θ</span>
+    <span style="top: 45%; left: 65%;">πr²</span>
+    <span style="top: 75%; left: 25%;">%</span>
+    <span style="top: 85%; left: 55%;">180°</span>
+  </div>
+  <div class="container">
+    <h1>Latihan Interaktif Diagram Lingkaran</h1>
+    <div class="quiz-nav">
+      <button class="quiz-btn" onclick="showQuestion(1)">1</button>
+      <button class="quiz-btn" onclick="showQuestion(2)">2</button>
+      <button class="quiz-btn" onclick="showQuestion(3)">3</button>
+      <button class="quiz-btn" onclick="showQuestion(4)">4</button>
+      <button class="quiz-btn" onclick="showQuestion(5)">5</button>
+    </div>
+    <div id="question1" class="question-box">
+      <img src="https://i.ibb.co/ZM5Xxz3/lingkaran1.png" alt="Diagram Lingkaran 1">
+      <div class="question">Bagian mana yang memiliki persentase terbesar?</div>
+      <input type="text" id="answer1">
+      <button class="submit-btn" onclick="checkAnswer(1, 'Transportasi')">Cek Jawaban</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+    <div id="question2" class="question-box">
+      <img src="https://i.ibb.co/7NpDhwq/lingkaran2.png" alt="Diagram Lingkaran 2">
+      <div class="question">Berapakah total persentase kategori A dan B?</div>
+      <input type="text" id="answer2">
+      <button class="submit-btn" onclick="checkAnswer(2, '60')">Cek Jawaban</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+    <div id="question3" class="question-box">
+      <img src="https://i.ibb.co/pw7DRJx/lingkaran3.png" alt="Diagram Lingkaran 3">
+      <div class="question">Kategori apa yang memiliki bagian terkecil?</div>
+      <input type="text" id="answer3">
+      <button class="submit-btn" onclick="checkAnswer(3, 'Pendidikan')">Cek Jawaban</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+    <div id="question4" class="question-box">
+      <img src="https://i.ibb.co/k6mMTfD/lingkaran4.png" alt="Diagram Lingkaran 4">
+      <div class="question">Berapa persen bagian "Lainnya"?</div>
+      <input type="text" id="answer4">
+      <button class="submit-btn" onclick="checkAnswer(4, '10')">Cek Jawaban</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+    <div id="question5" class="question-box">
+      <img src="https://i.ibb.co/5M0yNzZ/lingkaran5.png" alt="Diagram Lingkaran 5">
+      <div class="question">Jika total data 200 orang, berapa orang memilih kategori "Makanan"?</div>
+      <input type="text" id="answer5">
+      <button class="submit-btn" onclick="checkAnswer(5, '50')">Cek Jawaban</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+    <a href="diagram_lingkaran.html" class="back-btn">⬅ Kembali ke Materi</a>
+  </div>
+  <script>
+    function showQuestion(num) {
+      const boxes = document.querySelectorAll('.question-box');
+      boxes.forEach(box => box.style.display = 'none');
+      document.getElementById(`question${num}`).style.display = 'block';
+    }
+    function checkAnswer(qNum, correct) {
+      const input = document.getElementById(`answer${qNum}`).value.trim();
+      const feedback = document.getElementById(`feedback${qNum}`);
+      if (input.toLowerCase() === correct.toLowerCase()) {
+        feedback.textContent = '✅ Jawaban benar!';
+        feedback.style.color = '#2ecc71';
+      } else {
+        feedback.textContent = '❌ Jawaban salah. Coba lagi ya!';
+        feedback.style.color = '#e74c3c';
+      }
+    }
+  </script>
+</body>
+</html>

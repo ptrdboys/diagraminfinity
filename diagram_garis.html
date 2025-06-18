@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagram Garis - Theo Math</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364),
+                  url('https://i.ibb.co/ZKfzgW2/math-bg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
+    }
+
+    p.intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-box, .desc-box {
+      flex: 1 1 42%;
+      min-width: 300px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      border: 3px solid #f1c40f;
+      transition: all 0.3s ease-in-out;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .image-box img:hover {
+      filter: brightness(1.1);
+    }
+
+    .desc-box {
+      background: url('https://i.ibb.co/9ZHkgMS/grid-bg.png'), rgba(255,255,255,0.12);
+      background-size: cover;
+      background-blend-mode: overlay;
+      border-radius: 15px;
+      padding: 25px 30px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .desc-box h2 {
+      margin-bottom: 15px;
+      color: #f9ca24;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #f8f8f8;
+    }
+
+    ul li::marker {
+      content: '📈 ';
+    }
+
+    .btn-interaktif {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+      margin: 50px auto 20px;
+      padding: 14px 30px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-interaktif:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.1rem;
+      background: #f1c40f;
+      color: #000;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #f39c12;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+      .desc-box {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="window.location.href='3.html'">⬅ Kembali</button>
+
+  <div class="container">
+    <h1>Diagram Garis</h1>
+    <p class="intro">Diagram garis digunakan untuk menunjukkan perubahan data dari waktu ke waktu secara visual. Yuk lihat ciri-cirinya!</p>
+
+    <div class="content">
+      <div class="image-box" data-aos="fade-right">
+        <img src="image/gariss.jpg" alt="Contoh Diagram Garis">
+      </div>
+      <div class="desc-box" data-aos="fade-left">
+        <h2>Ciri-ciri Diagram Garis</h2>
+        <ul>
+          <li>📅 Menyajikan data dalam bentuk titik-titik yang dihubungkan dengan garis</li>
+          <li>📊 Cocok untuk data berurutan seperti waktu</li>
+          <li>📈 Memperlihatkan tren kenaikan atau penurunan</li>
+          <li>🧮 Mudah melihat pola perubahan data</li>
+          <li>📌 Titik-titik mewakili nilai-nilai data pada waktu tertentu</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="latihan_diagram_garis.html" class="btn-interaktif">
+      Soal
+    </a>
+
+    <footer>
+      &copy; Theo Math | 23510027 - Putri Rahma Dini
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Pembelajaran - Theo Math</title>
+  <link rel="icon" href="image/logo.jpeg" type="image/png">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: auto;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 950px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .option {
+      background: #006d77;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .option:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .option h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .option p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+   
+    footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.8rem;
+      color: #fff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol Kembali -->
+  <button class="back-btn" onclick="window.location.href='buka.html'">
+    &#8592; Kembali
+  </button>
+
+  <div class="container">
+    <h1>📊 Diagram</h1>
+    <p class="description"></p>
+
+    <div class="options">
+      <div class="option" >
+        <h2>📘 Pengertian Diagram</h2>
+        <p>Diagram adalah gambar atau visual yang membantu menyajikan data agar lebih mudah dibaca dan dipahami.</p>
+      </div>
+      <div class="option" >
+        <h2>🎯 Kenapa Harus Diagram?</h2>
+        <p>Bayangkan kamu punya data tentang hobi teman sekelas. Lewat diagram, kamu bisa langsung tahu siapa suka apa!</p>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 | Putri Rahma Dini - 23510027 | Theo Math
+    </footer>
+  </div>
+
+</body>
+</html>
