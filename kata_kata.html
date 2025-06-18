@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Kata-Kata Motivasi - Theo Math</title>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
@@ -28,6 +28,7 @@
       color: #fff;
       animation: float 6s infinite linear;
       opacity: 0.7;
+      z-index: 1;
     }
 
     @keyframes float {
@@ -42,19 +43,17 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
+      max-width: 90%;
+      margin: 80px auto 40px;
+      padding: 20px;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 20px;
-      margin-top: 60px;
-      margin-bottom: 60px;
     }
 
     h1 {
       text-align: center;
       color: #ffc0cb;
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       text-shadow: 0 0 10px rgba(255, 192, 203, 0.8);
     }
 
@@ -69,7 +68,7 @@
       border-radius: 10px;
       border: none;
       outline: none;
-      width: 70%;
+      width: 100%;
       max-width: 400px;
     }
 
@@ -92,17 +91,18 @@
 
     #output {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-top: 30px;
       background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+      padding: 15px;
       border-radius: 15px;
       line-height: 1.6;
+      word-wrap: break-word;
     }
 
     .kembali {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .kembali a button {
@@ -112,16 +112,25 @@
     footer {
       text-align: center;
       font-size: 0.9rem;
-      margin-top: 50px;
-      color: rgba(255,255,255,0.7);
+      margin: 30px 0;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
+
       input[type="text"] {
-        width: 90%;
+        font-size: 0.95rem;
+      }
+
+      button {
+        font-size: 0.95rem;
+      }
+
+      #output {
+        font-size: 1rem;
       }
     }
   </style>
